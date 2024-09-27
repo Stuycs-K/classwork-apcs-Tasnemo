@@ -10,10 +10,15 @@ public class MyArrays {
   }
 
   public static int[] returnCopy(int[]ary) {
+    ans = new int[ary.length];
+    for( int i = 0 ;i < ary.length) {
+      ans[i] = ary[i];
+      
+    }
 
   }
 
   public static void main(string[]args) {
-    arrayToString()
+
   }
 }
