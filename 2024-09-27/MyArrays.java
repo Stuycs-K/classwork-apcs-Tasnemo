@@ -1,13 +1,16 @@
 public class MyArrays {
-  public static String arrayToString(int[] ary) {
-      if (ary.length == 0) return "[]";
-      String fin = "[";
-      for (int i = 0; i < ary.length - 1; i++) {
-          fin += ary[i] + ", ";
-      }
-      fin += ary[ary.length - 1] + "]";
-      return fin;
-  }
+    public static String arrayToString(int[][]nums){
+        String s = "[";
+        for (int i = 0; i < nums.length; i++ ){
+            if (i < nums.length - 1){
+                s += arrayToString(nums[i]);
+                s += ", ";
+            }
+        }
+        s += arrayToString(nums[nums.length - 1]) + "]";
+        return s;
+
+    }
 
   public static int[] returnCopy(int[] ary) {
       int[] copy = new int[ary.length];
