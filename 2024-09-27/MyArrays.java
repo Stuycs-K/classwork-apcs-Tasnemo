@@ -18,15 +18,16 @@ public class MyArrays {
   }
 
   public static int[] concatArray(int[] ary1, int[] ary2) {
-      int[] concatted = new int[ary1.length + ary2.length];
-      for (int i = 0; i < ary1.length; i++) {
-          concatted[i] = ary1[i];
-      }
-      for (int i = 0; i < ary2.length; i++) {
-          concatted[ary1.length + i] = ary2[i];
-      }
-      return concatted;
-  }
+    int[] concatted = new int[ary1.length + ary2.length];
+    for (int i = 0; i < concatted.length; i++) {
+        if (i < ary1.length) {
+            concatted[i] = ary1[i];
+        } else {
+            concatted[i] = ary2[i - ary1.length];
+        }
+    }
+    return concatted;
+}
 
   public static void main(String[] args) {
       int[][] testArrays = {
@@ -36,10 +37,11 @@ public class MyArrays {
           {0, -1, 2}   
       };
 
-      for (int[] test : testArrays) {
-          int[] copy = returnCopy(test);
-          System.out.println("Original: " + arrayToString(test) + " | Copy: " + arrayToString(copy));
-      }
+      for (int i = 0; i < testArrays.length; i++) {
+        int[] copy = returnCopy(testArrays[i]);
+        System.out.println("Original: " + arrayToString(testArrays[i]) + " | Copy: " + arrayToString(copy));
+    }
+  
 
       int[][] array1Tests = {
           {1, 2, 3},                  
