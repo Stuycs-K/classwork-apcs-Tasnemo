@@ -1,10 +1,12 @@
 public class ArrayMethods {
   public static void main(String[] args) {
+    //arrstringtest
     int[][] test = {{1,2,3}, {4,5,6}, {7,8,9}};
     System.out.println(arrToString(test));
     test = new int[][] {{1,3,5}, {1,2},{}};
     System.out.println(arrToString(test));
 
+    //arr2D sum tests
     test = new int[][] {{1,2,-3}, {4,5,6},{7,8,9}};
     System.out.println(arr2DSum(test));
     test = new int[][] {{1,3,5}, {1,2},{}};
@@ -14,7 +16,53 @@ public class ArrayMethods {
     System.out.println(arrToString(swapRC(test)));
     test = new int[][] {{1,3,5}, {1,2,4},{5,6,7}};
     System.out.println(arrToString(swapRC(test)));
+
+    //replaceNegative tests
+     int[][] test1 = {
+      { 1, -2, 3 },
+      { -4, -5, 6 },
+      { 7, 8, -9 }
+  };
+  replaceNegative(test1);
+  System.out.println("Test 1 Result: " + arrToString(test1));
+
+
+  int[][] test2 = {
+      { -1, -2, 3 },
+      { 4, -5, -6 },
+      { -7, 8, 9 }
+  };
+  replaceNegative(test2);
+  System.out.println("Test 2 Result: " + arrToString(test2));
+
+
+  int[][] test3 = {
+      { 0, 0, 0 },
+      { 0, 0, 0 },
+      { 0, 0, 0 }
+  };
+  replaceNegative(test3);
+  System.out.println("Test 3 Result: " + arrToString(test3));
+
+ 
+  int[][] test4 = {
+      { -1, -1, -1 },
+      { -1, -1, -1 },
+      { -1, -1, -1 }
+  };
+  replaceNegative(test4);
+  System.out.println("Test 4 Result: " + arrToString(test4));
+
   
+  int[][] test5 = {
+      { -1, 2, -3 },
+      { 4, -5, -6 },
+      { -7, -8, 9 }
+  };
+  replaceNegative(test5);
+  System.out.println("Test 5 Result: " + arrToString(test5));
+
+  //testcopiedtest
     test = new int[][] {{1, 2, -3}, {4, 5, 6}, {7, 8, 9}};
     int[][] copiedTest1 = copy(test);
     System.out.println("Original: " + arrToString(test));
