@@ -15,6 +15,25 @@ public class ArrayMethods {
     test = new int[][] {{1,3,5}, {1,2,4},{5,6,7}};
     System.out.println(arrToString(swapRC(test)));
   
+    test = new int[][] {{1, 2, -3}, {4, 5, 6}, {7, 8, 9}};
+    int[][] copiedTest1 = copy(test);
+    System.out.println("Original: " + arrToString(test));
+    System.out.println("Copy: " + arrToString(copiedTest1));
+
+    test[0][0] = 10;
+    System.out.println("After mod:");
+    System.out.println("Original: " + arrToString(test));
+    System.out.println("Copy: " + arrToString(copiedTest1));
+
+    test = new int[][] {{1, 3, 5}, {1, 2, 4}, {5, 6, 7}};
+    int[][] copiedTest2 = copy(test);
+    System.out.println("Original: " + arrToString(test));
+    System.out.println("Copy: " + arrToString(copiedTest2));
+
+    test[1][1] = 20;
+    System.out.println("After mod:");
+    System.out.println("Original: " + arrToString(test));
+    System.out.println("Copy: " + arrToString(copiedTest2));
   
   }
 
