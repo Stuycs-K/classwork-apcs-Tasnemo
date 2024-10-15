@@ -5,8 +5,8 @@ public class Demo{
   to the others.
   */
   public static double distance(Point a, Point b){
-    return Math.sqrt( (a.getX - b.getX)*(a.getX - b.getX) - (a.getY - b.getY) *
-       (a.getY - b.getY))
+    return Math.sqrt( (a.getX() - b.getX())*(a.getX() - b.getX()) + (a.getY() - b.getY()) *
+       (a.getY() - b.getY()));
   }
 
   public static void main(String[]args){
