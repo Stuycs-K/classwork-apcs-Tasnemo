@@ -25,5 +25,13 @@ public class Demo{
     System.out.println("Distance (p4 to p5): " + p4.distanceTo(p5));
     System.out.println("Distance (p4 to p6): " + p4.distanceTo(p6));
     System.out.println("Distance (p5 to p6): " + p5.distanceTo(p6));
+    
+    // equilateral triangle
+    Point tA = new Point(0,0);
+    Point tB = new Point(1,0);
+    Point tC = new Point(.5,Math.sqrt(3)/2);
+    System.out.println("Length AB: " + tA.distanceTo(tB));
+    System.out.println("Length BC: " + tB.distanceTo(tC));
+    System.out.println("Length CA: " + tC.distanceTo(tA));
   }
 }
