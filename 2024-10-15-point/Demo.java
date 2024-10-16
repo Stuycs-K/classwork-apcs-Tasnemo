@@ -5,8 +5,7 @@ public class Demo{
   to the others.
   */
   public static double distance(Point a, Point b){
-    return Math.sqrt( (a.getX() - b.getX())*(a.getX() - b.getX()) + (a.getY() - b.getY()) *
-       (a.getY() - b.getY()));
+    return Math.sqrt( (a.getX() - b.getX())*(a.getX() - b.getX()) + (a.getY() - b.getY()) * (a.getY() - b.getY()));
   }
 
   public static void main(String[]args){
@@ -14,8 +13,17 @@ public class Demo{
     Point p2 = new Point(-1,-1);
     Point p3 = new Point(3,4);
     System.out.println(p3);
-    System.out.println( distance(p1,p2));
-    System.out.println( Point.distance(p1,p2));
-    System.out.println( p1.distanceTo(p2));
+    System.out.println("Distance (p1 to p2): " + distance(p1,p2));
+    System.out.println("Distance (p1 to p2): " + Point.distance(p1,p2));
+    System.out.println("Distance (p1 to p2): " + p1.distanceTo(p2));
+    Point p4 = new Point(0, 0);
+    Point p5 = new Point(0, 1);
+    Point p6 = new Point(1, 0);
+
+    System.out.println("Distance (p1 to p4): " + p1.distanceTo(p4));
+    System.out.println("Distance (p2 to p5): " + p2.distanceTo(p5));
+    System.out.println("Distance (p4 to p5): " + p4.distanceTo(p5));
+    System.out.println("Distance (p4 to p6): " + p4.distanceTo(p6));
+    System.out.println("Distance (p5 to p6): " + p5.distanceTo(p6));
   }
 }
