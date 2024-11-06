@@ -20,8 +20,8 @@ public class TriangleTester {
         }
         catch (FileNotFoundException ex) {
             System.out.println("File not found");
-            }
-            return count;
+        }
+        return count;
     }
 
     public static int countTrianglesB(String filename) {
@@ -29,15 +29,19 @@ public class TriangleTester {
         try {
             File file = new File(filename);
             Scanner input = new Scanner(file);
-            int[] sides = new int[3];
+            int[][] sides = new int[3][3];
             while (input.hasNextInt()) {
-                for (int i = 0; i < 3; i ++) {
-                    if (input.hasNextInt()) {
-                        sides[i] = input.nextInt();
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        if (input.hasNextInt()) {
+                            sides[i][j] = input.nextInt();
+                        }
                     }
                 }
-                if (isValidTriangle(sides[0], sides[1], sides[2])) {
-                    count++;
+                for (int j = 0; j < 3; j++) {
+                    if (isValidTriangle(sides[0][j], sides[1][j], sides[2][j])) {
+                        count++;
+                    }
                 }
             }
             input.close();
@@ -53,7 +57,11 @@ public class TriangleTester {
     }
 
     public static void main(String[] args) {
-        int validTrianglesCount = countTrianglesB("inputTri.txt");
-        System.out.println(validTrianglesCount);
+        int validTrianglesCountA = countTrianglesA("inputTri.txt");
+        System.out.println("Count of valid triangles (Part A): " + validTrianglesCountA);
+
+        int validTrianglesCountB = countTrianglesB("inputTri.txt");
+        System.out.println("Count of valid triangles (Part B): " + validTrianglesCountB);
     }
 }
+
