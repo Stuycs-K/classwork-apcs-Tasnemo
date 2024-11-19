@@ -64,4 +64,3 @@ public class TriangleTester {
         System.out.println("Count of valid triangles (Part B): " + validTrianglesCountB);
     }
 }
-
