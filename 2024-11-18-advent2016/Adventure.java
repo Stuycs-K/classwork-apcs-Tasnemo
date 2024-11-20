@@ -17,7 +17,7 @@ public class Adventure {
        String[] dirs = line.split(", ");
 
 
-
+        return dirs;
      }
    catch (FileNotFoundException ex) {
        System.out.println("File not found");
@@ -31,9 +31,16 @@ public class Adventure {
    int O = 0;
    int[][] oreo =  {
    {0,1}, {1,0}, {0,-1}, {-1,0}};
-   int[] travels = new int[instruc.length()/2];
-   String[] turns = new String[instruc.length(/2)];
-   for( int i = 0; i < instruc.length(); i++) {}
+   int[] travels = new int[instruc.length];
+   String[] turns = new String[instruc.length];
+   for( int i = 0; i < instruc.length; i++) {
+     turns[i] = instruc[i].substring(0,1);
+     System.out.println(turns[i]);
+     travels[i] = instruc[i].substring(1);
+     System.out.println(travels[i]);
+
+
+   }
 
    return 0;
  }
