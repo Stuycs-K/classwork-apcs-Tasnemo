@@ -11,13 +11,13 @@ public class Wizard extends Adventurer {
       return specialQ;
     }
     public int getSpecialMax() {
-      return SpecialMax;
+      return specialMax;
     }
   public void setSpecial(int n) {
     if( n <= getSpecialMax()) {
     specialQ = n;
   }
-
+}
 public String attack(Adventurer other) {
   other.setHP(other.getHP() - 1);
   return "attac";

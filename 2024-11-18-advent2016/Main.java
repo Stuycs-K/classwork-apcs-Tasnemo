@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-      Adventure.parse("input.txt");
+      Adventure.travel(Adventure.parse("input.txt"));
+
     }
 }
