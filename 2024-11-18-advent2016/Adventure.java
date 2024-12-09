@@ -1,9 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.*;
-import java.io.*;
 
 
 public class Adventure {
@@ -25,7 +22,8 @@ public class Adventure {
    return null;
  }
 
- public static int travel(String[] instruc) {
+ public static int travel(String filename) {
+  String[] instruc = parse(filename);
    int x = 0;
    int y = 0;
    int O = 0;
@@ -36,13 +34,23 @@ public class Adventure {
    for( int i = 0; i < instruc.length; i++) {
      turns[i] = instruc[i].substring(0,1);
      System.out.println(turns[i]);
-     travels[i] = instruc[i].substring(1);
+     travels[i] = Integer.parseInt(instruc[i].substring(1));
      System.out.println(travels[i]);
+     if (turns[i].equals( "L")) {
+      O -= 1;
+     } else {
+      O += 1;
+     }
 
+     O = (O + 4) % 4;
+     x = x + oreo[O][0] * travels[i];
+     y = y + oreo[O][1] * travels[i];
+     System.out.println(x + "," + y);
 
    }
 
-   return 0;
+
+   return Math.abs(x) + Math.abs(y);
  }
 
 }
