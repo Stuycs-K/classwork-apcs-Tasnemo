@@ -1,5 +1,6 @@
+import java.util.Scanner;
 public class Scanner {
-  import java.util.Scanner;
+
   class Main {
     public static void main(String[] args) {
       //do this once
