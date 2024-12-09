@@ -1,4 +1,5 @@
 public class Text{
+<<<<<<< HEAD
 //MODIFIERS
 public static final int BRIGHT = 1;
 public static final int DARK = 2;
@@ -104,3 +105,4 @@ public static void main(String[]args){
 }
 
 }
+>>>>>>> 435f14441e4f4439121d4ff6131c1024ef52e5e5
