@@ -23,12 +23,17 @@ public class Driver {
         System.out.println("Game over! You decided to stop.");
         stillPlaying = false;
       } else if (choice.equals("a")) {
-        System.out.println("You dealt " + Integer.parseInt(you.attack(rival)) + " damage to your rival.");
+        String result = you.attack(rival);
+        int damage = extractNumber(result);
+        System.out.println("You dealt " + damage + " damage to your rival.");
       } else if (choice.equals("sp")) {
-        System.out.println(
-            "You unleashed your special attack for " + Integer.parseInt(you.specialAttack(rival)) + " damage!");
+        String result = you.specialAttack(rival);
+        int damage = extractNumber(result);
+        System.out.println("You unleashed your special attack for " + damage + " damage!");
       } else if (choice.equals("su")) {
-        System.out.println("You restored " + Integer.parseInt(you.support()) + " energy points.");
+        String result = you.support();
+        int restored = extractNumber(result);
+        System.out.println("You restored " + restored + " energy points.");
       } else {
         System.out.println("Not a valid choice, try again.");
       }
@@ -41,12 +46,17 @@ public class Driver {
       if (stillPlaying) {
         int rivalMove = rng.nextInt(3);
         if (rivalMove == 0) {
-          System.out.println("Your rival hit you for " + Integer.parseInt(rival.attack(you)) + " damage.");
+          String result = rival.attack(you);
+          int damage = extractNumber(result);
+          System.out.println("Your rival hit you for " + damage + " damage.");
         } else if (rivalMove == 1) {
-          System.out.println(
-              "Your rival used a special attack for " + Integer.parseInt(rival.specialAttack(you)) + " damage.");
+          String result = rival.specialAttack(you);
+          int damage = extractNumber(result);
+          System.out.println("Your rival used a special attack for " + damage + " damage.");
         } else {
-          System.out.println("Your rival restored " + Integer.parseInt(rival.support()) + " energy points.");
+          String result = rival.support();
+          int restored = extractNumber(result);
+          System.out.println("Your rival restored " + restored + " energy points.");
         }
 
         if (you.getHP() <= 0) {
@@ -58,5 +68,9 @@ public class Driver {
 
     System.out.println("Thanks for playing!");
     input.close();
+  }
+
+  public static int extractNumber(String input) {
+    return Integer.parseInt(input.replaceAll("[^0-9]", ""));
   }
 }
