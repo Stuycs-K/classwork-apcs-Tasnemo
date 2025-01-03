@@ -1,7 +1,7 @@
 public class Driver {
   public static void main (String[] args) {
   ///System.out.println(fib(Integer.parseInt(args[0])));
-  makeWords(2,"","abc");
+  makeWords(Integer.parseInt(args[0]),"", args[1]);
   }
   public static int fib( int ind) {
     if (ind == 0)  return 0;
@@ -17,10 +17,13 @@ public class Driver {
       System.out.println(result);
     } else {
       for (int i = 0; i < alphabet.length(); i ++) {
-        makeWord(remainingLetters - 1, result + alphabet.charAt(i); alphabet)
+        makeWords(remainingLetters - 1, result + alphabet.charAt(i), alphabet);
       }
 
     }
 
 }
+  public static String toWords(int n)  {
+    return null;
+  }
 }
